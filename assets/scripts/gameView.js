@@ -28,5 +28,14 @@ export default class GameView {
                 <div class="board__tile" data-index="8">0</div>
             </div>
         `;
+
+        this.onTileClick = undefined;
+        this.onRestartClick = undefined;
+
+        this.root.querySelectorAll('.board__tile').forEach(tile => {
+            tile.addEventListener('click', () => {
+                this.onTileClick(tile.dataset.index);
+            });
+        });
     }
 }
