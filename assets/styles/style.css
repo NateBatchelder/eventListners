@@ -6,6 +6,7 @@
     border: 1px solid black;
     width: 500px;
     height: 500px;
+    font-family: sans-serif;
     font-weight: bold;
     display: flex;
     flex-direction: column;
@@ -17,13 +18,28 @@
     background: lightgrey;
 }
 
-.header a {
+.header > * {
     color: blue;
 }
 
-nav {
-    list-style-type: none;
-    text-decoration: none;
+.header__turn {
+    padding: 12px;
+}
+
+.header__status {
+    padding: 12px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header__restart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
 }
 
 .board {
