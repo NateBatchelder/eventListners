@@ -13,7 +13,7 @@ export default class GameView {
                     In Progress
                 </div>
                 <button type="button" class="header__reset">
-                    <i class="material-icons">refresh</i>
+                    <i class="material-icons">autorenew</i>
                 </button>
             </div>
         `;
