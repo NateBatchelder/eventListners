@@ -32,7 +32,7 @@
   ## Credits
   Thanks for the supportive communties of Stack Overflow contribuiters, YouTube content creators, and the unwavering encouragment of my family.  
 
-  [Recognition to dcode for Building a Tic-Tac-Toe Game with HTML, CSS & JavaScript Tutorial For Beginners (Project).](https://www.youtube.com/watch?v=Azx_uooP8rM)
+  [Recognition to dcode for Building a Tic-Tac-Toe Game with HTML, CSS & JavaScript Tutorial For Beginners.](https://www.youtube.com/watch?v=Azx_uooP8rM)
   
   
   The work herein is the authorship of Nathan Batchelder and should be considered a work in progress.
