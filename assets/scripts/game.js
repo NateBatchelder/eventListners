@@ -26,8 +26,8 @@ export default class Game {
         }
     }
 
-    winningCombinationArrays() {
-        return [
+    findWinningCombinationArrays() {
+        const winningCombinationArrays = [
             [0, 1, 2],
             [3, 4, 5],
             [6, 7, 8],
@@ -38,22 +38,19 @@ export default class Game {
             [2, 4, 6]
         ];
 
-        // "For" loop that iterates through the array of winning combinations and checks if the board has a winning combination.  If it does, the loop returns the winning combination. If it doesn't, the loop returns null. 
-        for (const combination of this.winningCombinationArrays()) {
+        for (const combination of winningCombinationArrays) {
             let [a, b, c] = combination;
-            // if statment that checks if the board has a winning combination and returns the winning combination if it does. 
-            if (this.board[a] && this.board[a] === this.board[b] && this.board[a] === this.board[c]) {
-                return this.board[a];
+        
+            if (this.board[a] && this.board[a] === this.board[b] && this.board[a] === this.board[c])) {
+                return combination;
             }
         }
-        // returns null if the board doesn't have a winning combination
+        
         return null;
     }
 
     isInProgress() {
         // checks if the board has a winning combination and returns true if it does.  If the game is in progress, it returns false. 
-        return this.winningCombinationArrays() === null && this.board.includes(null);
-
+        return !this.findWinningCombinationArrays() && this.board.includes(null);
     }
-
 }

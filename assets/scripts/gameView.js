@@ -28,19 +28,21 @@ export default class GameView {
         this.onTileClick = undefined;
         this.onRestartClick = undefined;
 
-        this.root.querySelectorAll('.board__tile').forEach(tile => {
-            tile.addEventListener('click', () => {
+        this.root.querySelectorAll(".board__tile").forEach(tile => {
+            tile.addEventListener("click", () => {
                 if (this.onTileClick) {
                     this.onTileClick(tile.dataset.index);
                 }
             });
         });
-        this.root.querySelector(".header__reset").addEventListener('click', () => {
+
+        this.root.querySelector(".header__reset").addEventListener("click", () => {
             if (this.onRestartClick) {
                 this.onRestartClick();
             }
         });
     }
+    
     update(game) {
         this.updateTurn(game);
         this.updateStatus(game);
