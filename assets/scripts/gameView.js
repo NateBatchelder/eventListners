@@ -8,7 +8,7 @@ export default class GameView {
             <div class="header">
                 <div class="header__turn"></div>
                 <div class="header__status"></div>
-                <button type="button" class="header__reset">
+                <button type="button" class="header__restart">
                     <i class="material-icons">autorenew</i>
                 </button>
             </div>
@@ -36,13 +36,13 @@ export default class GameView {
             });
         });
 
-        this.root.querySelector(".header__reset").addEventListener("click", () => {
+        this.root.querySelector(".header__restart").addEventListener("click", () => {
             if (this.onRestartClick) {
                 this.onRestartClick();
             }
         });
     }
-    
+
     update(game) {
         this.updateTurn(game);
         this.updateStatus(game);
@@ -53,25 +53,27 @@ export default class GameView {
         this.root.querySelector(".header__turn").textContent = `${game.turn}'s turn`;
             
     }
+    
     updateStatus(game) {
         let status = "In Progress";
-        if (game.winningCombinationArrays()) {
+
+        if (game.findWinningCombinations()) {
             status = `${game.turn} wins!`;
-        } else if (game.isInProgress()) {
+        } else if (!game.isInProgress()) {
             status = "In Progress";
         }
-        
         this.root.querySelector(".header__status").textContent = status;
     }
+
     updateBoard(game) {
-        const winningCombinationArrays = game.findWinningCombinationArrays();
+        const winningCombinations = game.findWinningCombinations();
         for (let i = 0; i < 9; i++) {
             const tile = this.root.querySelector(`[data-index="${i}"]`);
             
             tile.classList.remove("board__tile--winning");
             tile.textContent = game.board[i];
 
-            if (winningCombinationArrays && winningCombinationArrays.includes(i)) {
+            if (winningCombinations && winningCombinations.includes(i)) {
                 tile.classList.add("board__tile--winner");
             }
         }   

@@ -21,13 +21,13 @@ export default class Game {
         this.board[i] = this.turn;
         
         // if a winner has not been found, the next turn is applied
-        if (!this.findWinningCombinationArrays()) {
+        if (!this.findWinningCombinations()) {
             this.nextTurn();
         }
     }
 
-    findWinningCombinationArrays() {
-        const winningCombinationArrays = [
+    findWinningCombinations() {
+        const winningCombinations = [
             [0, 1, 2],
             [3, 4, 5],
             [6, 7, 8],
@@ -38,7 +38,7 @@ export default class Game {
             [2, 4, 6]
         ];
 
-        for (const combination of winningCombinationArrays) {
+        for (const combination of winningCombinations) {
             let [a, b, c] = combination;
         
             if (this.board[a] && this.board[a] === this.board[b] && this.board[a] === this.board[c]) {
@@ -51,6 +51,6 @@ export default class Game {
 
     isInProgress() {
         // checks if the board has a winning combination and returns true if it does.  If the game is in progress, it returns false. 
-        return !this.findWinningCombinationArrays() && this.board.includes(null);
+        return !this.findWinningCombinations() && this.board.includes(null);
     }
 }

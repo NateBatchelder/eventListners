@@ -15,7 +15,7 @@
 .header {
     display: flex;
     align-items: center;
-    background: lightgrey;
+    background: lightgreen;
 }
 
 .header > * {
@@ -53,7 +53,7 @@
 }
 
 .board__tile {
-    background: white;
+    background: whitesmoke;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -68,7 +68,7 @@
 }
 
 .board__tile--winner {
-    color: green;
+    color: lightgreen;
 }
 
 
