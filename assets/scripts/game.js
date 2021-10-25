@@ -21,7 +21,7 @@ export default class Game {
         this.board[i] = this.turn;
         
         // if a winner has not been found, the next turn is applied
-        if (!this.winningCombinationArrays()) {
+        if (!this.findWinningCombinationArrays()) {
             this.nextTurn();
         }
     }
@@ -41,7 +41,7 @@ export default class Game {
         for (const combination of winningCombinationArrays) {
             let [a, b, c] = combination;
         
-            if (this.board[a] && this.board[a] === this.board[b] && this.board[a] === this.board[c])) {
+            if (this.board[a] && this.board[a] === this.board[b] && this.board[a] === this.board[c]) {
                 return combination;
             }
         }
