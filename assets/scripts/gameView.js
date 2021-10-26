@@ -68,7 +68,7 @@ export default class GameView {
     updateBoard(game) {
         const winningCombinations = game.findWinningCombinations();
         for (let i = 0; i < 9; i++) {
-            const tile = this.root.querySelector(`[data-index="${i}"]`);
+            const tile = this.root.querySelector(`.board__tile[data-index="${i}"]`);
             
             tile.classList.remove("board__tile--winning");
             tile.textContent = game.board[i];
