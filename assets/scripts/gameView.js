@@ -70,7 +70,9 @@ export default class GameView {
         for (let i = 0; i < 9; i++) {
             const tile = this.root.querySelector(`.board__tile[data-index="${i}"]`);
             
-            tile.classList.remove("board__tile--winning");
+            //TODO if the game has been won, remove the board__title--winning class
+
+            tile.classList.remove("board__tile--winner");
             tile.textContent = game.board[i];
 
             if (winningCombinations && winningCombinations.includes(i)) {
