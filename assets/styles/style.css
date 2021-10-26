@@ -64,11 +64,11 @@
 }
 
 .board__tile:hover {
-    background: #eee;
+    background: lightgreen;
 }
 
 .board__tile--winner {
-    color: lightgreen;
+    color: red;
 }
 
 
